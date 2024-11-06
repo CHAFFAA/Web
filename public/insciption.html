@@ -55,7 +55,7 @@
 
             <div class="register-container" id="register">
                 <header>Sign Up</header>
-                <form>
+                <form onsubmit="checkRoleAndRedirect(event)">
                     <div class="input-box">
                         <input type="text" class="input-field" id="register-email" placeholder="Email" name="email">
                         <i class="bx bx-envelope"></i>
@@ -116,7 +116,7 @@
                 i.className = "nav-menu";
             }
         }
-
+    
         function login() {
             var x = document.getElementById("login");
             var y = document.getElementById("register");
@@ -129,7 +129,7 @@
             x.style.opacity = 1;
             y.style.opacity = 0;
         }
-
+    
         function register() {
             var x = document.getElementById("login");
             var y = document.getElementById("register");
@@ -142,32 +142,17 @@
             x.style.opacity = 0;
             y.style.opacity = 1;
         }
-
-        function redirectToHome() {
-            window.location.href = 'index.html';
-        }
-
-        function validateLogin() {
-            var username = document.getElementById("login-username").value;
-            var password = document.getElementById("login-password").value;
-            if (username === "" || password === "") {
-                alert("Please fill in both fields.");
+    
+        function checkRoleAndRedirect(event) {
+            event.preventDefault();
+            var role = document.querySelector('input[name="role"]:checked').value;
+            if (role === "organisateur") {
+                window.location.href = 'ajouter.html';
             } else {
-                redirectToHome();
-            }
-        }
-
-        function validateRegister() {
-            var firstname = document.getElementById("register-firstname").value;
-            var lastname = document.getElementById("register-lastname").value;
-            var email = document.getElementById("register-email").value;
-            var password = document.getElementById("register-password").value;
-            if (firstname === "" || lastname === "" || email === "" || password === "") {
-                alert("Please fill in all fields.");
-            } else {
-                redirectToHome();
+                window.location.href = 'index.html';;
             }
         }
     </script>
+    
 </body>
 </html>
