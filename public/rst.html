@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Pricing Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-dark-navy-blue: rgb(11, 39, 66);
+            --color-medium-blue: rgb(34, 100, 148);
+            --color-dark-teal-blue: rgb(22, 69, 108);
+            --color-light-blue: rgb(51, 138, 190);
+        }
+        body {
+            background: linear-gradient(135deg, var(--color-dark-navy-blue), var(--color-medium-blue), var(--color-dark-teal-blue), var(--color-light-blue));
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            font-family: 'Lato', sans-serif;
+        }
+        /* Styles principaux pour les cartes */
+        .pricing-card {
+            width: 100%;
+            max-width: 300px;
+            margin: 0.5rem;
+        }
+        /* Media Query pour les écrans moyens */
+        @media (min-width: 768px) {
+            .pricing-container {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+            .pricing-card {
+                width: 100%;
+            }
+        }
+        /* Media Query pour les écrans larges */
+        @media (min-width: 1024px) {
+            .pricing-container {
+                justify-content: space-between;
+            }
+            .pricing-card {
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="text-center my-10">
+        <h1 class="font-bold text-3xl mb-2">Choose your plan</h1>
+    </div>
+
+    <div class="pricing-container flex flex-col items-center mx-auto px-4">
+        <div class="pricing-card bg-blue-600 text-white rounded-lg shadow p-6">
+            <h3 class="text-black font-bold text-lg">Monthly</h3>
+            <p class="mt-1"><span class="font-bold text-4xl text-white">$49</span> /Month</p>
+            <p class="text-sm mt-2 text-white">For most businesses that want to post their trips.</p>
+            <div class="text-sm mt-4">
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> 40 ads</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Own dashboard</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Chat support</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Optimize hashtags</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Total:49$</p>
+            </div>
+            <button class="w-full text-blue-700 bg-white rounded py-2 mt-4">Choose Plan</button>
+        </div>
+
+        <div class="pricing-card bg-teal-600 text-white rounded-lg shadow p-6">
+            <h3 class="text-black font-bold text-lg">Quarterly</h3>
+            <p class="mt-1"><span class="font-bold text-4xl">$32</span> /Month</p>
+            <p class="text-sm mt-2 text-white">For most businesses that want to post their trips.</p>
+            <div class="text-sm mt-4">
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> 60 ads/month</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Own dashboard</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Chat support</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Optimize hashtags</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Total:117$</p>
+            </div>
+            <button class="w-full text-teal-700 bg-white rounded py-2 mt-4">Choose Plan</button>
+        </div>
+
+        <div class="pricing-card bg-pink-600 text-white rounded-lg shadow p-6">
+            <h3 class="text-black font-bold text-lg">Annually</h3>
+            <p class="mt-1"><span class="font-bold text-4xl text-white">$24</span> /Month</p>
+            <p class="text-sm mt-2 text-white">For most businesses that want to post their trips.</p>
+            <div class="text-sm mt-4">
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> 74 ads/month</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Own dashboard</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Chat support</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Optimize hashtags</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Total:300$</p>
+            </div>
+            <button class="w-full text-pink-700 bg-white rounded py-2 mt-4">Choose Plan</button>
+        </div>
+    </div>
+
+</body>
+</html>
